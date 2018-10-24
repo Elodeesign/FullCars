@@ -34,7 +34,7 @@ export class CarsListComponent implements OnInit {
 
   onSearch = ref => {
     if (ref.value !== '') {
-      this.carsService.getCars(ref.value).subscribe(
+      this.carsService.getSearchCars(ref.value).subscribe(
         result => {
           this.cars = result
         },

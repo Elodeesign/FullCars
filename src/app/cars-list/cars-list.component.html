@@ -1,0 +1,47 @@
+<h1>Welcome to the Full Cars !</h1>
+<div class="ui fluid icon input" style="margin-top:3rem;">
+  <input #ref (input)="onSearch(ref)" type="text" placeholder="Recherchez une voiture...">
+  <i class="search icon"></i>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui grid" style="margin-top:3rem;">
+  <div *ngFor="let item of cars">
+    <div class="ui card">
+      <div class="image">
+        <img [src]="item.img ? item.img : 'https://vignette.wikia.nocookie.net/animalcrossing/images/7/76/Gif_licorne.gif/revision/latest?cb=20160411122402&path-prefix=fr'">
+      </div>
+      <div class="content">
+        <a class="header"> {{item.brand}}</a>
+        <div class="meta">
+          <span class="date">Année : {{item.year}}</span><br />
+        </div>
+        <div class="ui divider"></div>
+        <div class="description">
+          Couleur : {{item.color}}
+          Nombre de portes : {{item.doors}}
+          Kilométrage : {{item.km}}
+          Énergie : {{item.energy}}
+          Date du dernier contrôle technique : {{item.technical_control}}
+        </div>
+      </div>
+      <div class="extra content">
+        Prix de vente : {{item.price}} €
+      </div>
+      <div class="extra content">
+
+        <div class="ui large transparent left icon input">
+          <button class="ui red icon button" (click)="handleDelete(item.id)">
+            <i class="trash alternate icon"></i>
+          </button>
+          <a [routerLink]="['/car-edit', item.id]" class="ui blue icon button">
+            <i class="pencil alternate icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

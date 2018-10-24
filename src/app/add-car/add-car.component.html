@@ -1,0 +1,47 @@
+<h1>AJOUTER UNE VOITURE</h1>
+<div class="ui form">
+  <div class="three fields">
+    <div class="field">
+      <label>Marque</label>
+      <input required type="text" placeholder="Marque" #brand>
+    </div>
+    <div class="field">
+      <label>Année</label>
+      <input required type="number" placeholder="Année" #year>
+    </div>
+    <div class="field">
+      <label>Couleur</label>
+      <input required type="text" placeholder="Couleur" #color>
+    </div>
+  </div>
+  <div class="three fields">
+    <div class="field">
+      <label>Kilométrage</label>
+      <input required type="number" placeholder="kms" #km>
+    </div>
+    <div class="field">
+      <label>Nombre de portes</label>
+      <input required type="number" placeholder="portes" #doors>
+    </div>
+    <div class="field">
+      <label>Date du dernier contrôle technique</label>
+      <input type="date" placeholder="CT" #technical_control>
+    </div>
+  </div>
+  <div class="three fields">
+    <div class="field">
+      <label>Image</label>
+      <input type="text" placeholder="image" #img>
+    </div>
+    <div class="field">
+      <label>Prix de vente</label>
+      <input required type="number" placeholder="prix" #price>
+    </div>
+    <div class="field">
+      <label>Energie</label>
+      <input required type="text" placeholder="energie" #energy>
+    </div>
+  </div>
+
+  <div class="ui red button" (click)="handleSubmit($event, brand, color, year, km, doors, technical_control, img, price, energy)">Ajouter</div>
+</div>

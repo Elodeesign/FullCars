@@ -66,6 +66,7 @@ app.post('/add-car', function(req, res) {
 
 app.put('/car-edit', function(req, res) {
   console.log('put: ', req.body)
+
   sql = `UPDATE cars SET brand = '${req.body.brand}', color = '${
     req.body.color
   }', year = '${req.body.year}', km = '${req.body.km}', doors = '${

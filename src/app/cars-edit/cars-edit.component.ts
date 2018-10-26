@@ -16,9 +16,9 @@ export class CarsEditComponent implements OnInit {
   car: any
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')
+    const body = this.route.snapshot.paramMap.get('id')
 
-    this.car = this.carsService.getCarsById(id).subscribe(
+    this.car = this.carsService.getCarsById(body).subscribe(
       result => {
         this.car = result
         console.log(result)

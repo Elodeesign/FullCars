@@ -13,7 +13,7 @@ export class AddCarComponent implements OnInit {
 
   ngOnInit() {}
 
-  handleSubmit = (
+  onSubmit = (
     event,
     brand,
     color,
@@ -37,9 +37,7 @@ export class AddCarComponent implements OnInit {
         price: price.value,
         energy: energy.value
       })
-      .subscribe(data => {
-        console.log(data)
-        this.router.navigate(['/cars-list'])
-      })
+      .subscribe()
+    this.router.navigate(['/cars-list'])
   }
 }

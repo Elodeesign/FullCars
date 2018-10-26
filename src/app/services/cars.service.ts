@@ -15,8 +15,8 @@ export class CarsService {
     return this.http.get('http://localhost:3000/cars-list/' + search)
   }
 
-  getCarsById = id => {
-    //return this.http.put()
+  getCarsById = body => {
+    return this.http.put('http://localhost:3000/cars-list/', body)
   }
 
   getDelete = id => {

@@ -64,6 +64,24 @@ app.post('/add-car', function(req, res) {
   //res.sendStatus(200)
 })
 
+app.put('/car-edit', function(req, res) {
+  console.log('put: ', req.body)
+  sql = `UPDATE cars SET brand = '${req.body.brand}', color = '${
+    req.body.color
+  }', year = '${req.body.year}', km = '${req.body.km}', doors = '${
+    req.body.doors
+  }', technical_control = '${req.body.technical_control}', img = '${
+    req.body.img
+  }', price = '${req.body.price}',energy = '${
+    req.body.energy
+  }' WHERE cars.id = ${req.body.id}`
+  connection.query(sql),
+    function(err, rows, fields) {
+      if (err) throw err
+      res.json(rows)
+    }
+})
+
 app.delete('/cars-list/:id', function(req, res) {
   console.log('delete:', req.params.id)
   sql = `DELETE FROM cars WHERE cars.id = '${req.params.id}'`
